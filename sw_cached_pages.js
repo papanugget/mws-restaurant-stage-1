@@ -1,12 +1,12 @@
 // cache vars
 const cacheName = 'v1';
 const cacheAssets = [
-    './index.html',
-    './restaurant.html',
-    './css/style.css',
-    './data/restaurants.json',
-    './img/*.jpg',
-    './js/*.js'
+    'index.html',
+    'restaurant.html',
+    'css/style.css',
+    'data/restaurants.json',
+    'img/*.jpg',
+    'js/*.js'
 ];
 
 // call install event

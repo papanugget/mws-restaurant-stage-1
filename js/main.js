@@ -4,6 +4,18 @@ let restaurants,
 var newMap
 var markers = []
 
+// check for service worker compatibility
+if('serviceWorker' in navigator){
+  // console.log('Service worker supported');
+  // register when window loads
+  window.addEventListener('load', () => {
+    navigator.serviceWorker
+      .register('../sw_cached_pages.js')
+      .then(reg => console.log('service worker: Registered'))
+      .catch(err => console.log(`Service worker: Error: ${err}`))
+  });
+}
+
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
@@ -199,7 +211,7 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
     // Add marker to the map
     const marker = DBHelper.mapMarkerForRestaurant(restaurant, self.newMap);
-    marker.on("click", onClick);
+    marker.on("click", onClick);             
     function onClick() {
       window.location.href = marker.options.url;
     }

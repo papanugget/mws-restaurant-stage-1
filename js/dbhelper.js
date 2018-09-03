@@ -9,7 +9,7 @@ class DBHelper {
    */
   static get DATABASE_URL() {
     const port = 5500 // Change this to your server port
-    return `http://localhost:${port}/mws-restaurant-stage-1/data/restaurants.json`;
+    return `http://localhost:${port}/data/restaurants.json`;
   }
 
   /**
@@ -150,7 +150,7 @@ class DBHelper {
    * Restaurant image URL.
    */
   static imageUrlForRestaurant(restaurant) {
-    return (`/mws-restaurant-stage-1/img/${restaurant.photograph}`);
+    return (`./img/${restaurant.photograph}`);
   }
 
   /**
@@ -164,6 +164,7 @@ class DBHelper {
       url: DBHelper.urlForRestaurant(restaurant)
       })
       marker.addTo(newMap);
+      marker.tabIndex = '0';
     return marker;
   } 
   /* static mapMarkerForRestaurant(restaurant, map) {

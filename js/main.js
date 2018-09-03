@@ -17,6 +17,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
  * Fetch all neighborhoods and set their HTML.
  */
 fetchNeighborhoods = () => {
+  // implement local storage with if statement
+  if(localStorage.getItem)
   DBHelper.fetchNeighborhoods((error, neighborhoods) => {
     if (error) { // Got an error
       console.error(error);
@@ -162,7 +164,7 @@ createRestaurantHTML = (restaurant) => {
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
-  image.alt = `Image of ${restaurant.name} restaurant`
+  image.alt = `Image of ${restaurant.name} restaurant`;
   li.append(image);
 
   const name = document.createElement('h1');
@@ -171,17 +173,18 @@ createRestaurantHTML = (restaurant) => {
   li.append(name);
 
   const neighborhood = document.createElement('p');
-  neighborhood.setAttribute('role', 'Neighborhood')
+  neighborhood.setAttribute('role', 'Neighborhood');
   neighborhood.innerHTML = restaurant.neighborhood;
   li.append(neighborhood);
 
   const address = document.createElement('p');
-  address.setAttribute('role', 'Address')
+  address.setAttribute('role', 'Address');
   address.innerHTML = restaurant.address;
   li.append(address);
 
   const more = document.createElement('a');
-  more.setAttribute('role', 'Button')
+  more.setAttribute('role', 'Button');
+  more.tabIndex = '3';
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
   li.append(more)

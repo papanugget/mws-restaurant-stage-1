@@ -3,19 +3,6 @@ let restaurants,
   cuisines
 var newMap
 var markers = []
-
-// check for service worker compatibility
-if('serviceWorker' in navigator){
-  // console.log('Service worker supported');
-  // register when window loads
-  window.addEventListener('load', () => {
-    navigator.serviceWorker
-      .register('/mws-restaurant-stage-1/sw_cached_pages.js')
-      .then(reg => console.log('service worker: Registered'))
-      .catch(err => console.log(`Service worker: Error: ${err}`))
-  });
-}
-
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */

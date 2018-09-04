@@ -1,3 +1,14 @@
+// check for service worker compatibility
+if('serviceWorker' in navigator){
+  // console.log('Service worker supported');
+  // register when window loads
+  window.addEventListener('load', () => {
+    navigator.serviceWorker
+      .register('../sw_cached_pages.js')
+      .then(reg => console.log(`Service worker: Registered: ${reg}`))
+      .catch(err => console.log(`Service worker: Error: ${err}`))
+  });
+}
 /**
  * Common database helper functions.
  */
@@ -10,7 +21,7 @@ class DBHelper {
   static get DATABASE_URL() {
     const port = 5500 // Change this to your server port
     // return `http://localhost:${port}/data/restaurants.json`;
-    return 'data/restaurants.json';
+    return './data/restaurants.json';
   }
 
   /**

@@ -81,7 +81,7 @@ nav {
   height: 80px;
   background-color: #252831;
   text-align:center;
-  padding: 20px;
+  /* padding: 20px; */
 }
 nav h1 {
   margin: auto;
@@ -101,7 +101,7 @@ nav h1 a {
     background-color: #eee;
     font-size: 17px;
     margin: 0;
-    width: calc(50% - 80px);
+    width: 100%;
 }
 
 /* Display list items side by side */
@@ -165,7 +165,6 @@ nav h1 a {
   background-color: #f3f3f3;
   list-style: outside none none;
   margin: auto;
-  /* padding: 30px ; */
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -189,9 +188,6 @@ nav h1 a {
   margin-top: 10px;
   max-width: 100%;
   border-radius: 5px;
-  /* padding: 10px; */
-  /* min-height: 248px; */
-  /* min-width: 100%; */
   height: auto;
 }
 #restaurants-list li h1 {

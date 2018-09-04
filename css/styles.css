@@ -71,7 +71,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   color: #aaa;
   font-size: 8pt;
   letter-spacing: 1px;
-  padding: 25px;
+  padding: 25px 0px;
   text-align: center;
   text-transform: uppercase;
 }
@@ -96,7 +96,7 @@ nav h1 a {
   /* padding-bottom: 20px; */
 }
 #breadcrumb {
-    padding: 10px 40px 16px;
+    padding: 10px 0px 16px 40px; 
     list-style: none;
     background-color: #eee;
     font-size: 17px;

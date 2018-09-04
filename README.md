@@ -1,6 +1,6 @@
 # Front End Development - Project #5
 ---
-#### _Three Stage Course Material Project - Restaurant Reviews App
+#### Restaurant Reviews App
 
 Please check out the [live version here.](https://papanugget.github.io/mws-restaurant-stage-1/)
 
